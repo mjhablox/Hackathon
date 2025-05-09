@@ -65,13 +65,13 @@ def parse_ebpf_metrics(filepath):
                         try:
                             lower_value = 2**lower if lower > 0 else 0
                             upper_value = 2**upper - 1 if upper > 0 else 0
-                            
+
                             # For very large values, represent as strings to avoid JSON limitations
                             if lower > 63:  # 2^63 is around the max safe integer in most systems
                                 lower_value = f"2^{lower}"
                             if upper > 63:
                                 upper_value = f"2^{upper}-1"
-                            
+
                             rows.append({
                                 "range": {
                                     "lower": lower,
@@ -115,7 +115,7 @@ def parse_ebpf_metrics(filepath):
                     agg_data[key.strip()] = int(value.strip())
                 except ValueError:
                     agg_data[key.strip()] = value.strip()
-        
+
         if agg_data:
             metrics_json["aggregates"] = agg_data
             print(f"Parsed aggregate counts: {len(agg_data)} items")

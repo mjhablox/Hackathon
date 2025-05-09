@@ -1,6 +1,6 @@
 # Kea DHCP Server Monitoring with eBPF
 
-This project implements an eBPF-based monitoring solution for tracking performance metrics of the Kea DHCP server. It allows real-time observation of various performance indicators without modifying the Kea source code.
+This project implements an eBPF-based monitoring solution for tracking performance metrics of the Kea DHCP server. It allows real-time observation of various performance indicators without modifying the Kea source code. The collected metrics can now be integrated with Netflix Hollow for efficient in-memory storage and access.
 
 ## Overview
 
@@ -23,7 +23,13 @@ The monitoring solution tracks the following metrics:
 5. **kea_monitor_complete.py**: All-in-one script for monitoring, traffic generation, and visualization
 6. **troubleshoot_kea_server.py**: Script to diagnose Kea server connectivity issues
 7. **dras_wrapper.py**: Script to run Infoblox's Dras client from macOS
-8. **Support Scripts**:
+8. **Netflix Hollow Integration** (located in `hallow/` directory):
+   - `ebpf_to_json.py`: Convert eBPF metrics output to structured JSON
+   - `ebpf_to_hollow.py`: Convert JSON metrics to Hollow format and push to Hollow producer
+   - `ebpf_hollow_monitor.py`: Continuously monitor and push metrics to Hollow
+   - `visualize_json_metrics.py`: Create visualizations from JSON format metrics
+   - `test_hollow_integration.py`: Test the Hollow integration with sample data
+9. **Support Scripts**:
    - `find_available_functions.py`: Tool to find relevant functions in Kea binary
    - `find_mangled_names.py`: Tool to find mangled versions of function names
    - `list_all_functions.py`: Comprehensive function discovery in Kea binary
@@ -183,6 +189,45 @@ Common issues:
 3. **Network Connectivity**: Ensure macOS can reach Linux server (ping test)
 4. **Firewalls**: Check for firewalls blocking UDP ports 67/68
 5. **Interface Issues**: Verify correct interfaces are being used on both sides
+
+## Netflix Hollow Integration
+
+This project now supports integration with Netflix Hollow for efficient in-memory storage and access of metrics data. For detailed instructions, see [HOLLOW_INTEGRATION.md](HOLLOW_INTEGRATION.md).
+
+### Converting eBPF Metrics to JSON
+
+```bash
+# Convert metrics file to JSON format
+./hallow/ebpf_to_json.py metrics_file.txt -o metrics.json --pretty
+```
+
+### Pushing Metrics to Hollow
+
+```bash
+# Convert JSON metrics to Hollow format and push to a Hollow producer
+./hallow/ebpf_to_hollow.py metrics.json -p http://hollow-producer.example.com/api -d dhcp_metrics -t your_auth_token
+```
+
+### Continuous Monitoring and Pushing to Hollow
+
+```bash
+# Start continuous monitoring with 5-minute intervals
+sudo ./hallow/ebpf_hollow_monitor.py -p http://hollow-producer.example.com/api -d dhcp_metrics -t your_auth_token -i 300 -v
+```
+
+### Testing the Hollow Integration
+
+```bash
+# Run the test script to verify the Hollow integration
+./hallow/test_hollow_integration.py -p http://hollow-producer.example.com/api
+```
+
+### Visualizing JSON Metrics
+
+```bash
+# Generate visualizations from JSON metrics
+./hallow/visualize_json_metrics.py metrics.json -o visualizations/
+```
 
 ## License
 

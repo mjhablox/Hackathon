@@ -1,0 +1,435 @@
+{
+  "types": {
+    "MetricsState": {
+      "fields": {
+        "timestamp": "String",
+        "source": "String",
+        "metrics": "Map<String, Metric>",
+        "aggregates": "Map<String, Integer>"
+      }
+    },
+    "Metric": {
+      "fields": {
+        "name": "String",
+        "total": "Integer",
+        "unit": "String",
+        "buckets": "List<MetricBucket>"
+      }
+    },
+    "MetricBucket": {
+      "fields": {
+        "lower": "Integer",
+        "upper": "Integer",
+        "count": "Integer"
+      }
+    }
+  },
+  "data": {
+    "MetricsState": [
+      {
+        "timestamp": "2025-05-09T16:56:33.568749",
+        "source": "sample_metrics.txt",
+        "metrics": {
+          "Packet Processing Time": {
+            "name": "Packet Processing Time",
+            "total": 752,
+            "unit": "ns",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 0
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 0
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 0
+              },
+              {
+                "lower": 8,
+                "upper": 15,
+                "count": 0
+              },
+              {
+                "lower": 16,
+                "upper": 31,
+                "count": 3
+              },
+              {
+                "lower": 32,
+                "upper": 63,
+                "count": 8
+              },
+              {
+                "lower": 64,
+                "upper": 127,
+                "count": 15
+              },
+              {
+                "lower": 128,
+                "upper": 255,
+                "count": 24
+              },
+              {
+                "lower": 256,
+                "upper": 511,
+                "count": 52
+              },
+              {
+                "lower": 512,
+                "upper": 1023,
+                "count": 180
+              },
+              {
+                "lower": 1024,
+                "upper": 2047,
+                "count": 312
+              },
+              {
+                "lower": 2048,
+                "upper": 4095,
+                "count": 105
+              },
+              {
+                "lower": 4096,
+                "upper": 8191,
+                "count": 35
+              },
+              {
+                "lower": 8192,
+                "upper": 16383,
+                "count": 12
+              },
+              {
+                "lower": 16384,
+                "upper": 32767,
+                "count": 4
+              },
+              {
+                "lower": 32768,
+                "upper": 65535,
+                "count": 2
+              }
+            ]
+          },
+          "Packet Drop Rate": {
+            "name": "Packet Drop Rate",
+            "total": 39,
+            "unit": "packets",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 24
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 8
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 5
+              },
+              {
+                "lower": 8,
+                "upper": 15,
+                "count": 2
+              }
+            ]
+          },
+          "CPU Usage": {
+            "name": "CPU Usage",
+            "total": 1031,
+            "unit": "cores",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 35
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 152
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 256
+              },
+              {
+                "lower": 8,
+                "upper": 15,
+                "count": 423
+              },
+              {
+                "lower": 16,
+                "upper": 31,
+                "count": 105
+              },
+              {
+                "lower": 32,
+                "upper": 63,
+                "count": 42
+              },
+              {
+                "lower": 64,
+                "upper": 127,
+                "count": 18
+              }
+            ]
+          },
+          "Memory Usage": {
+            "name": "Memory Usage",
+            "total": 1072,
+            "unit": "bytes",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 75
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 128
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 203
+              },
+              {
+                "lower": 8,
+                "upper": 15,
+                "count": 367
+              },
+              {
+                "lower": 16,
+                "upper": 31,
+                "count": 154
+              },
+              {
+                "lower": 32,
+                "upper": 63,
+                "count": 92
+              },
+              {
+                "lower": 64,
+                "upper": 127,
+                "count": 53
+              }
+            ]
+          },
+          "Network Traffic": {
+            "name": "Network Traffic",
+            "total": 53,
+            "unit": "packets",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 27
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 15
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 8
+              },
+              {
+                "lower": 8,
+                "upper": 15,
+                "count": 3
+              }
+            ]
+          },
+          "Error Rates": {
+            "name": "Error Rates",
+            "total": 19,
+            "unit": "errors",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 12
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 5
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 2
+              }
+            ]
+          },
+          "Lease Allocation Time": {
+            "name": "Lease Allocation Time",
+            "total": 410,
+            "unit": "ns",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 0
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 0
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 0
+              },
+              {
+                "lower": 8,
+                "upper": 15,
+                "count": 0
+              },
+              {
+                "lower": 16,
+                "upper": 31,
+                "count": 1
+              },
+              {
+                "lower": 32,
+                "upper": 63,
+                "count": 5
+              },
+              {
+                "lower": 64,
+                "upper": 127,
+                "count": 12
+              },
+              {
+                "lower": 128,
+                "upper": 255,
+                "count": 28
+              },
+              {
+                "lower": 256,
+                "upper": 511,
+                "count": 64
+              },
+              {
+                "lower": 512,
+                "upper": 1023,
+                "count": 156
+              },
+              {
+                "lower": 1024,
+                "upper": 2047,
+                "count": 102
+              },
+              {
+                "lower": 2048,
+                "upper": 4095,
+                "count": 35
+              },
+              {
+                "lower": 4096,
+                "upper": 8191,
+                "count": 7
+              }
+            ]
+          },
+          "Database Query Performance": {
+            "name": "Database Query Performance",
+            "total": 375,
+            "unit": "count",
+            "buckets": [
+              {
+                "lower": 0,
+                "upper": 1,
+                "count": 0
+              },
+              {
+                "lower": 2,
+                "upper": 3,
+                "count": 0
+              },
+              {
+                "lower": 4,
+                "upper": 7,
+                "count": 0
+              },
+              {
+                "lower": 8,
+                "upper": 15,
+                "count": 1
+              },
+              {
+                "lower": 16,
+                "upper": 31,
+                "count": 3
+              },
+              {
+                "lower": 32,
+                "upper": 63,
+                "count": 9
+              },
+              {
+                "lower": 64,
+                "upper": 127,
+                "count": 22
+              },
+              {
+                "lower": 128,
+                "upper": 255,
+                "count": 45
+              },
+              {
+                "lower": 256,
+                "upper": 511,
+                "count": 87
+              },
+              {
+                "lower": 512,
+                "upper": 1023,
+                "count": 112
+              },
+              {
+                "lower": 1024,
+                "upper": 2047,
+                "count": 68
+              },
+              {
+                "lower": 2048,
+                "upper": 4095,
+                "count": 23
+              },
+              {
+                "lower": 4096,
+                "upper": 8191,
+                "count": 5
+              }
+            ]
+          }
+        },
+        "aggregates": {
+          "Packet Drop Rate": 39,
+          "Cpu Usage": 1031,
+          "Memory Usage": 1072,
+          "Network Traffic": 53,
+          "Error Rates": 19
+        }
+      }
+    ]
+  }
+}

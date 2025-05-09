@@ -1,0 +1,725 @@
+{
+  "metadata": {
+    "timestamp": "2025-05-09T16:56:33.568749",
+    "source_file": "sample_metrics.txt"
+  },
+  "metrics": {
+    "Packet Processing Time": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 8,
+            "upper": 15,
+            "lower_value": 256,
+            "upper_value": 32767
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 16,
+            "upper": 31,
+            "lower_value": 65536,
+            "upper_value": 2147483647
+          },
+          "count": 3,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 32,
+            "upper": 63,
+            "lower_value": 4294967296,
+            "upper_value": 9223372036854775807
+          },
+          "count": 8,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 64,
+            "upper": 127,
+            "lower_value": "2^64",
+            "upper_value": "2^127-1"
+          },
+          "count": 15,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 128,
+            "upper": 255,
+            "lower_value": "2^128",
+            "upper_value": "2^255-1"
+          },
+          "count": 24,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 256,
+            "upper": 511,
+            "lower_value": "2^256",
+            "upper_value": "2^511-1"
+          },
+          "count": 52,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 512,
+            "upper": 1023,
+            "lower_value": "2^512",
+            "upper_value": "2^1023-1"
+          },
+          "count": 180,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 1024,
+            "upper": 2047,
+            "lower_value": "2^1024",
+            "upper_value": "2^2047-1"
+          },
+          "count": 312,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 2048,
+            "upper": 4095,
+            "lower_value": "2^2048",
+            "upper_value": "2^4095-1"
+          },
+          "count": 105,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 4096,
+            "upper": 8191,
+            "lower_value": "2^4096",
+            "upper_value": "2^8191-1"
+          },
+          "count": 35,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 8192,
+            "upper": 16383,
+            "lower_value": "2^8192",
+            "upper_value": "2^16383-1"
+          },
+          "count": 12,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 16384,
+            "upper": 32767,
+            "lower_value": "2^16384",
+            "upper_value": "2^32767-1"
+          },
+          "count": 4,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 32768,
+            "upper": 65535,
+            "lower_value": "2^32768",
+            "upper_value": "2^65535-1"
+          },
+          "count": 2,
+          "unit": "ns"
+        }
+      ],
+      "total": 752
+    },
+    "Packet Drop Rate": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 24,
+          "unit": "packets"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 8,
+          "unit": "packets"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 5,
+          "unit": "packets"
+        },
+        {
+          "range": {
+            "lower": 8,
+            "upper": 15,
+            "lower_value": 256,
+            "upper_value": 32767
+          },
+          "count": 2,
+          "unit": "packets"
+        }
+      ],
+      "total": 39
+    },
+    "CPU Usage": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 35,
+          "unit": "cores"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 152,
+          "unit": "cores"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 256,
+          "unit": "cores"
+        },
+        {
+          "range": {
+            "lower": 8,
+            "upper": 15,
+            "lower_value": 256,
+            "upper_value": 32767
+          },
+          "count": 423,
+          "unit": "cores"
+        },
+        {
+          "range": {
+            "lower": 16,
+            "upper": 31,
+            "lower_value": 65536,
+            "upper_value": 2147483647
+          },
+          "count": 105,
+          "unit": "cores"
+        },
+        {
+          "range": {
+            "lower": 32,
+            "upper": 63,
+            "lower_value": 4294967296,
+            "upper_value": 9223372036854775807
+          },
+          "count": 42,
+          "unit": "cores"
+        },
+        {
+          "range": {
+            "lower": 64,
+            "upper": 127,
+            "lower_value": "2^64",
+            "upper_value": "2^127-1"
+          },
+          "count": 18,
+          "unit": "cores"
+        }
+      ],
+      "total": 1031
+    },
+    "Memory Usage": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 75,
+          "unit": "bytes"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 128,
+          "unit": "bytes"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 203,
+          "unit": "bytes"
+        },
+        {
+          "range": {
+            "lower": 8,
+            "upper": 15,
+            "lower_value": 256,
+            "upper_value": 32767
+          },
+          "count": 367,
+          "unit": "bytes"
+        },
+        {
+          "range": {
+            "lower": 16,
+            "upper": 31,
+            "lower_value": 65536,
+            "upper_value": 2147483647
+          },
+          "count": 154,
+          "unit": "bytes"
+        },
+        {
+          "range": {
+            "lower": 32,
+            "upper": 63,
+            "lower_value": 4294967296,
+            "upper_value": 9223372036854775807
+          },
+          "count": 92,
+          "unit": "bytes"
+        },
+        {
+          "range": {
+            "lower": 64,
+            "upper": 127,
+            "lower_value": "2^64",
+            "upper_value": "2^127-1"
+          },
+          "count": 53,
+          "unit": "bytes"
+        }
+      ],
+      "total": 1072
+    },
+    "Network Traffic": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 27,
+          "unit": "packets"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 15,
+          "unit": "packets"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 8,
+          "unit": "packets"
+        },
+        {
+          "range": {
+            "lower": 8,
+            "upper": 15,
+            "lower_value": 256,
+            "upper_value": 32767
+          },
+          "count": 3,
+          "unit": "packets"
+        }
+      ],
+      "total": 53
+    },
+    "Error Rates": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 12,
+          "unit": "errors"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 5,
+          "unit": "errors"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 2,
+          "unit": "errors"
+        }
+      ],
+      "total": 19
+    },
+    "Lease Allocation Time": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 8,
+            "upper": 15,
+            "lower_value": 256,
+            "upper_value": 32767
+          },
+          "count": 0,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 16,
+            "upper": 31,
+            "lower_value": 65536,
+            "upper_value": 2147483647
+          },
+          "count": 1,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 32,
+            "upper": 63,
+            "lower_value": 4294967296,
+            "upper_value": 9223372036854775807
+          },
+          "count": 5,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 64,
+            "upper": 127,
+            "lower_value": "2^64",
+            "upper_value": "2^127-1"
+          },
+          "count": 12,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 128,
+            "upper": 255,
+            "lower_value": "2^128",
+            "upper_value": "2^255-1"
+          },
+          "count": 28,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 256,
+            "upper": 511,
+            "lower_value": "2^256",
+            "upper_value": "2^511-1"
+          },
+          "count": 64,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 512,
+            "upper": 1023,
+            "lower_value": "2^512",
+            "upper_value": "2^1023-1"
+          },
+          "count": 156,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 1024,
+            "upper": 2047,
+            "lower_value": "2^1024",
+            "upper_value": "2^2047-1"
+          },
+          "count": 102,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 2048,
+            "upper": 4095,
+            "lower_value": "2^2048",
+            "upper_value": "2^4095-1"
+          },
+          "count": 35,
+          "unit": "ns"
+        },
+        {
+          "range": {
+            "lower": 4096,
+            "upper": 8191,
+            "lower_value": "2^4096",
+            "upper_value": "2^8191-1"
+          },
+          "count": 7,
+          "unit": "ns"
+        }
+      ],
+      "total": 410
+    },
+    "Database Query Performance": {
+      "data": [
+        {
+          "range": {
+            "lower": 0,
+            "upper": 1,
+            "lower_value": 0,
+            "upper_value": 1
+          },
+          "count": 0,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 2,
+            "upper": 3,
+            "lower_value": 4,
+            "upper_value": 7
+          },
+          "count": 0,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 4,
+            "upper": 7,
+            "lower_value": 16,
+            "upper_value": 127
+          },
+          "count": 0,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 8,
+            "upper": 15,
+            "lower_value": 256,
+            "upper_value": 32767
+          },
+          "count": 1,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 16,
+            "upper": 31,
+            "lower_value": 65536,
+            "upper_value": 2147483647
+          },
+          "count": 3,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 32,
+            "upper": 63,
+            "lower_value": 4294967296,
+            "upper_value": 9223372036854775807
+          },
+          "count": 9,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 64,
+            "upper": 127,
+            "lower_value": "2^64",
+            "upper_value": "2^127-1"
+          },
+          "count": 22,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 128,
+            "upper": 255,
+            "lower_value": "2^128",
+            "upper_value": "2^255-1"
+          },
+          "count": 45,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 256,
+            "upper": 511,
+            "lower_value": "2^256",
+            "upper_value": "2^511-1"
+          },
+          "count": 87,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 512,
+            "upper": 1023,
+            "lower_value": "2^512",
+            "upper_value": "2^1023-1"
+          },
+          "count": 112,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 1024,
+            "upper": 2047,
+            "lower_value": "2^1024",
+            "upper_value": "2^2047-1"
+          },
+          "count": 68,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 2048,
+            "upper": 4095,
+            "lower_value": "2^2048",
+            "upper_value": "2^4095-1"
+          },
+          "count": 23,
+          "unit": "count"
+        },
+        {
+          "range": {
+            "lower": 4096,
+            "upper": 8191,
+            "lower_value": "2^4096",
+            "upper_value": "2^8191-1"
+          },
+          "count": 5,
+          "unit": "count"
+        }
+      ],
+      "total": 375
+    }
+  },
+  "aggregates": {
+    "Packet Drop Rate": 39,
+    "Cpu Usage": 1031,
+    "Memory Usage": 1072,
+    "Network Traffic": 53,
+    "Error Rates": 19
+  }
+}

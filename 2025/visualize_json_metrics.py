@@ -23,18 +23,18 @@ class JSONMetricsVisualizer:
         try:
             with open(filepath, 'r') as f:
                 data = json.load(f)
-            
+
             # Extract metrics data
             if 'metrics' in data:
                 self.metrics_data = data['metrics']
                 print(f"Loaded metrics data with {len(self.metrics_data)} categories")
-                
+
                 # Extract metadata if available
                 if 'metadata' in data:
                     self.metadata = data['metadata']
                     print(f"Source file: {self.metadata.get('source_file', 'unknown')}")
                     print(f"Timestamp: {self.metadata.get('timestamp', 'unknown')}")
-                
+
                 # Extract aggregates if available
                 if 'aggregates' in data:
                     self.aggregates = data['aggregates']
@@ -42,7 +42,7 @@ class JSONMetricsVisualizer:
             else:
                 print("No metrics data found in JSON file")
                 return False
-                
+
             return True
         except Exception as e:
             print(f"Failed to load JSON metrics: {e}")
@@ -75,7 +75,7 @@ class JSONMetricsVisualizer:
             # Prepare data for histogram
             labels = []
             values = []
-            
+
             # Get the unit for this metric
             unit = data[0].get('unit', 'count') if data else 'count'
 
@@ -84,7 +84,7 @@ class JSONMetricsVisualizer:
                 lower = range_info.get('lower', 0)
                 upper = range_info.get('upper', 0)
                 count = item.get('count', 0)
-                
+
                 # Format the label based on the actual values
                 if upper == lower + 1:
                     if lower > 20:  # Use scientific notation for very large values
@@ -99,7 +99,7 @@ class JSONMetricsVisualizer:
                             labels.append(f"{2 ** lower:,}-{2 ** (upper-1):,}")
                         except (OverflowError, ValueError):
                             labels.append(f"2^{lower}-2^{upper-1}")
-                
+
                 values.append(count)
 
             # Plot histogram
@@ -125,7 +125,7 @@ class JSONMetricsVisualizer:
                 plt.xlabel(f'Drop Count ({unit})')
             else:
                 plt.xlabel(f'Value Range ({unit})')
-                
+
             # Add data values on top of the bars
             for i, rect in enumerate(bars):
                 height = rect.get_height()
@@ -197,37 +197,37 @@ class JSONMetricsVisualizer:
             plt.close()
 
             print(f"Created summary visualization at {output_path}")
-            
+
     def create_aggregate_chart(self, output_dir):
         """Create a chart of aggregate metrics"""
         if not hasattr(self, 'aggregates') or not self.aggregates:
             print("No aggregate data available")
             return
-            
+
         plt.figure(figsize=(10, 6))
-        
+
         # Extract data
         labels = list(self.aggregates.keys())
         values = list(self.aggregates.values())
-        
+
         # Plot bar chart
         plt.bar(labels, values)
         plt.xlabel('Metric')
         plt.ylabel('Count')
         plt.title('eBPF Aggregate Metrics')
         plt.xticks(rotation=45, ha='right')
-        
+
         # Add data labels above bars
         for i, v in enumerate(values):
             plt.text(i, v + 0.01 * max(values), str(v), ha='center')
-            
+
         plt.tight_layout()
-        
+
         # Save figure
         output_path = os.path.join(output_dir, f"aggregates_{self.timestamp}.png")
         plt.savefig(output_path)
         plt.close()
-        
+
         print(f"Created aggregate metrics visualization at {output_path}")
 
 def main():
@@ -248,20 +248,20 @@ def main():
     if not os.path.isfile(args.input_file):
         print(f"Error: Input file '{args.input_file}' not found")
         return 1
-    
+
     try:
         # Create visualizer and process the data
         visualizer = JSONMetricsVisualizer()
-        
+
         if args.verbose:
             print("Loading JSON metrics data...")
-            
+
         if visualizer.load_json_metrics(args.input_file):
             if args.verbose:
                 print(f"JSON data loaded successfully. Metrics: {list(visualizer.metrics_data.keys())}")
-                
+
             visualizer.create_visualizations(args.output_dir)
-            
+
             if hasattr(visualizer, 'aggregates'):
                 if args.verbose:
                     print("Found aggregate data, creating aggregate chart...")
