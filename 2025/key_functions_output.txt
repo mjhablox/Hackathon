@@ -1,0 +1,152 @@
+Analyzing binary: /home/parallels/Work/Blox/UDDI/ddi.vendor.kea/kea/install_area/sbin/kea-dhcp4
+This may take a moment...
+
+Found 482 functions.
+
+=== FUNCTIONS MATCHING KEYWORDS ===
+0000000000076590 W boost::any::holder<boost::shared_ptr<isc::dhcp::Pkt4> >::clone() const
+0000000000076398 W boost::any::holder<boost::shared_ptr<isc::dhcp::Pkt4> >::type() const
+0000000000077bd0 W boost::any::holder<boost::shared_ptr<isc::dhcp::Pkt4> >::~holder()
+0000000000077780 W boost::any::holder<boost::shared_ptr<isc::dhcp::Pkt4> >::~holder()
+0000000000077780 W boost::any::holder<boost::shared_ptr<isc::dhcp::Pkt4> >::~holder()
+0000000000036bf8 W boost::asio::error::detail::addrinfo_category::message[abi:cxx11](int) const
+0000000000035e90 W boost::asio::error::detail::addrinfo_category::name() const
+0000000000036d60 W boost::asio::error::detail::misc_category::message[abi:cxx11](int) const
+0000000000035ea0 W boost::asio::error::detail::misc_category::name() const
+0000000000036f20 W boost::asio::error::detail::netdb_category::message[abi:cxx11](int) const
+0000000000035e80 W boost::asio::error::detail::netdb_category::name() const
+0000000000076278 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4AddrLst>::dispose()
+0000000000076298 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4AddrLst>::get_deleter(std::type_info const&)
+00000000000762a0 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4AddrLst>::get_local_deleter(std::type_info const&)
+00000000000762a8 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4AddrLst>::get_untyped_deleter()
+00000000000764e0 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4AddrLst>::~sp_counted_impl_p()
+0000000000075ec8 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4AddrLst>::~sp_counted_impl_p()
+0000000000075ec8 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4AddrLst>::~sp_counted_impl_p()
+0000000000076210 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4ClientFqdn>::dispose()
+0000000000076230 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4ClientFqdn>::get_deleter(std::type_info const&)
+0000000000076238 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4ClientFqdn>::get_local_deleter(std::type_info const&)
+0000000000076240 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4ClientFqdn>::get_untyped_deleter()
+00000000000764d8 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4ClientFqdn>::~sp_counted_impl_p()
+0000000000075eb8 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4ClientFqdn>::~sp_counted_impl_p()
+0000000000075eb8 W boost::detail::sp_counted_impl_p<isc::dhcp::Option4ClientFqdn>::~sp_counted_impl_p()
+00000000000761a0 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionInt<unsigned int> >::dispose()
+00000000000761c0 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionInt<unsigned int> >::get_deleter(std::type_info const&)
+00000000000761c8 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionInt<unsigned int> >::get_local_deleter(std::type_info const&)
+00000000000761d0 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionInt<unsigned int> >::get_untyped_deleter()
+0000000000076518 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionInt<unsigned int> >::~sp_counted_impl_p()
+0000000000075ea8 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionInt<unsigned int> >::~sp_counted_impl_p()
+0000000000075ea8 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionInt<unsigned int> >::~sp_counted_impl_p()
+00000000000761d8 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionString>::dispose()
+00000000000761f8 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionString>::get_deleter(std::type_info const&)
+0000000000076200 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionString>::get_local_deleter(std::type_info const&)
+0000000000076208 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionString>::get_untyped_deleter()
+00000000000764d0 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionString>::~sp_counted_impl_p()
+0000000000075eb0 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionString>::~sp_counted_impl_p()
+0000000000075eb0 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionString>::~sp_counted_impl_p()
+0000000000075f18 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionVendor>::dispose()
+0000000000075f38 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionVendor>::get_deleter(std::type_info const&)
+0000000000075f40 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionVendor>::get_local_deleter(std::type_info const&)
+0000000000075f48 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionVendor>::get_untyped_deleter()
+00000000000764a8 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionVendor>::~sp_counted_impl_p()
+0000000000075e50 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionVendor>::~sp_counted_impl_p()
+0000000000075e50 W boost::detail::sp_counted_impl_p<isc::dhcp::OptionVendor>::~sp_counted_impl_p()
+00000000000760f8 W boost::detail::sp_counted_impl_p<isc::dhcp::Pkt4>::dispose()
+0000000000076118 W boost::detail::sp_counted_impl_p<isc::dhcp::Pkt4>::get_deleter(std::type_info const&)
+0000000000076120 W boost::detail::sp_counted_impl_p<isc::dhcp::Pkt4>::get_local_deleter(std::type_info const&)
+0000000000076128 W boost::detail::sp_counted_impl_p<isc::dhcp::Pkt4>::get_untyped_deleter()
+00000000000764c0 W boost::detail::sp_counted_impl_p<isc::dhcp::Pkt4>::~sp_counted_impl_p()
+0000000000075e68 W boost::detail::sp_counted_impl_p<isc::dhcp::Pkt4>::~sp_counted_impl_p()
+0000000000075e68 W boost::detail::sp_counted_impl_p<isc::dhcp::Pkt4>::~sp_counted_impl_p()
+0000000000051a78 W boost::shared_ptr<isc::dhcp::Network4> boost::dynamic_pointer_cast<isc::dhcp::Network4, isc::dhcp::Network>(boost::shared_ptr<isc::dhcp::Network>&&)
+000000000007a6d0 W boost::shared_ptr<isc::dhcp::OptionCustom> boost::dynamic_pointer_cast<isc::dhcp::OptionCustom, isc::dhcp::Option>(boost::shared_ptr<isc::dhcp::Option> const&)
+000000000007af88 W boost::shared_ptr<isc::dhcp::OptionVendor> boost::dynamic_pointer_cast<isc::dhcp::OptionVendor, isc::dhcp::Option>(boost::shared_ptr<isc::dhcp::Option>&&)
+0000000000036088 W boost::system::detail::generic_error_category::message(int, char*, unsigned long) const
+00000000000369e8 W boost::system::detail::generic_error_category::message[abi:cxx11](int) const
+0000000000035e30 W boost::system::detail::generic_error_category::name() const
+0000000000037228 W boost::system::detail::interop_error_category::message(int, char*, unsigned long) const
+0000000000037368 W boost::system::detail::interop_error_category::message[abi:cxx11](int) const
+0000000000035e60 W boost::system::detail::interop_error_category::name() const
+0000000000035e50 W boost::system::detail::system_error_category::default_error_condition(int) const
+0000000000036098 W boost::system::detail::system_error_category::message(int, char*, unsigned long) const
+0000000000036af0 W boost::system::detail::system_error_category::message[abi:cxx11](int) const
+0000000000035e40 W boost::system::detail::system_error_category::name() const
+0000000000035e70 W boost::system::error_category::default_error_condition(int) const
+0000000000036158 W boost::system::error_category::equivalent(boost::system::error_code const&, int) const
+00000000000360a8 W boost::system::error_category::equivalent(int, boost::system::error_condition const&) const
+0000000000035e20 W boost::system::error_category::failed(int) const
+0000000000037268 W boost::system::error_category::message(int, char*, unsigned long) const
+0000000000048510 W boost::wrapexcept<std::runtime_error>::clone() const
+0000000000032dd4 W boost::wrapexcept<std::runtime_error>::rethrow() const
+0000000000046c10 W boost::wrapexcept<std::runtime_error>::~wrapexcept()
+0000000000045c20 W boost::wrapexcept<std::runtime_error>::~wrapexcept()
+0000000000045c20 W boost::wrapexcept<std::runtime_error>::~wrapexcept()
+000000000007f988 W isc::dhcp::AllocEngine::~AllocEngine()
+000000000007f8f8 W isc::dhcp::AllocEngine::~AllocEngine()
+000000000007f8f8 W isc::dhcp::AllocEngine::~AllocEngine()
+00000000000514d8 W isc::dhcp::DhcpConfigError::~DhcpConfigError()
+0000000000051480 W isc::dhcp::DhcpConfigError::~DhcpConfigError()
+0000000000051480 W isc::dhcp::DhcpConfigError::~DhcpConfigError()
+000000000007ebb0 W isc::dhcp::Network4::getMatchClientId(isc::dhcp::Network::Inheritance const&) const
+000000000007d9d0 W isc::dhcp::Network::getCalculateTeeTimes(isc::dhcp::Network::Inheritance const&) const
+00000000000522a8 W isc::dhcp::Network::getIface[abi:cxx11](isc::dhcp::Network::Inheritance const&) const
+000000000007d5a0 W isc::dhcp::Network::getReservationsGlobal(isc::dhcp::Network::Inheritance const&) const
+000000000007d7b8 W isc::dhcp::Network::getReservationsInSubnet(isc::dhcp::Network::Inheritance const&) const
+000000000007d2f8 W isc::dhcp::Network::getT1(isc::dhcp::Network::Inheritance const&) const
+000000000007d050 W isc::dhcp::Network::getT2(isc::dhcp::Network::Inheritance const&) const
+0000000000075e30 W isc::dhcp::Option::getData() const
+000000000007c888 W isc::dhcp::OptionDescriptor::~OptionDescriptor()
+000000000007c888 W isc::dhcp::OptionDescriptor::~OptionDescriptor()
+0000000000078730 W isc::dhcp::OptionInt<unsigned int>::clone() const
+0000000000077360 W isc::dhcp::OptionInt<unsigned int>::len() const
+0000000000076b20 W isc::dhcp::OptionInt<unsigned int>::pack(isc::util::OutputBuffer&, bool) const
+000000000007c2d0 W isc::dhcp::OptionInt<unsigned int>::toText[abi:cxx11](int) const
+0000000000078e60 W isc::dhcp::OptionInt<unsigned int>::unpack(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >)
+0000000000076848 W isc::dhcp::OptionInt<unsigned int>::~OptionInt()
+0000000000076830 W isc::dhcp::OptionInt<unsigned int>::~OptionInt()
+0000000000076830 W isc::dhcp::OptionInt<unsigned int>::~OptionInt()
+00000000000899d8 W isc::dhcp::Pkt6::getType() const
+000000000007a4c8 W isc::dhcp::ScopedEnableOptionsCopy<isc::dhcp::Pkt4>::ScopedEnableOptionsCopy(boost::shared_ptr<isc::dhcp::Pkt4> const&, boost::shared_ptr<isc::dhcp::Pkt4> const&)
+000000000007a4c8 W isc::dhcp::ScopedEnableOptionsCopy<isc::dhcp::Pkt4>::ScopedEnableOptionsCopy(boost::shared_ptr<isc::dhcp::Pkt4> const&, boost::shared_ptr<isc::dhcp::Pkt4> const&)
+000000000007a570 W isc::dhcp::ScopedEnableOptionsCopy<isc::dhcp::Pkt4>::~ScopedEnableOptionsCopy()
+000000000007a570 W isc::dhcp::ScopedEnableOptionsCopy<isc::dhcp::Pkt4>::~ScopedEnableOptionsCopy()
+0000000000051600 W isc::dhcp::SrvConfig::addConfiguredGlobal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, boost::shared_ptr<isc::data::Element const>)
+0000000000055bc8 W isc::log::LoggerNameError::~LoggerNameError()
+0000000000055b70 W isc::log::LoggerNameError::~LoggerNameError()
+0000000000055b70 W isc::log::LoggerNameError::~LoggerNameError()
+0000000000051918 W isc::util::Optional<bool> isc::dhcp::Network::getGlobalProperty<isc::util::Optional<bool> >(isc::util::Optional<bool>, int, int, int) const
+000000000007dbe8 W isc::util::Optional<double> isc::dhcp::Network::getGlobalProperty<isc::util::Optional<double> >(isc::util::Optional<double>, int, int, int) const
+00000000000794b0 W isc::util::Optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > isc::dhcp::Network::getGlobalProperty<isc::util::Optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >(isc::util::Optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, int, int, int) const
+000000000007ca40 W isc::util::Triplet<unsigned int> isc::dhcp::Network::getGlobalProperty<unsigned int>(isc::util::Triplet<unsigned int>, int, int, int) const
+000000000007cda0 W isc::util::Triplet<unsigned int> isc::dhcp::Network::getProperty<isc::dhcp::Network, isc::util::Triplet<unsigned int> >(isc::util::Triplet<unsigned int> (isc::dhcp::Network::*)(isc::dhcp::Network::Inheritance const&) const, isc::util::Triplet<unsigned int>, isc::dhcp::Network::Inheritance const&, int, int, int) const
+0000000000046ba8 W non-virtual thunk to boost::wrapexcept<std::runtime_error>::~wrapexcept()
+0000000000045c78 W non-virtual thunk to boost::wrapexcept<std::runtime_error>::~wrapexcept()
+0000000000046b38 W non-virtual thunk to boost::wrapexcept<std::runtime_error>::~wrapexcept()
+0000000000045cd0 W non-virtual thunk to boost::wrapexcept<std::runtime_error>::~wrapexcept()
+000000000007f818 W std::_Rb_tree<isc::dhcp::Lease::Type, std::pair<isc::dhcp::Lease::Type const, boost::shared_ptr<isc::dhcp::AllocEngine::Allocator> >, std::_Select1st<std::pair<isc::dhcp::Lease::Type const, boost::shared_ptr<isc::dhcp::AllocEngine::Allocator> > >, std::less<isc::dhcp::Lease::Type>, std::allocator<std::pair<isc::dhcp::Lease::Type const, boost::shared_ptr<isc::dhcp::AllocEngine::Allocator> > > >::_M_erase(std::_Rb_tree_node<std::pair<isc::dhcp::Lease::Type const, boost::shared_ptr<isc::dhcp::AllocEngine::Allocator> > >*)
+00000000000521b8 W std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, boost::shared_ptr<boost::multi_index::multi_index_container<boost::shared_ptr<isc::dhcp::OptionDefinition>, boost::multi_index::indexed_by<boost::multi_index::sequenced<boost::multi_index::tag<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na> >, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, unsigned short, &(isc::dhcp::OptionDefinition::getCode() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, &(isc::dhcp::OptionDefinition::getName[abi:cxx11]() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::ordered_non_unique<boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, boost::posix_time::ptime, &(isc::data::BaseStampedElement::getModificationTime() const)>, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::tag<isc::dhcp::OptionIdIndexTag, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, unsigned long, &(isc::data::BaseStampedElement::getId() const)>, mpl_::na, mpl_::na>, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, std::allocator<boost::shared_ptr<isc::dhcp::OptionDefinition> > > > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, boost::shared_ptr<boost::multi_index::multi_index_container<boost::shared_ptr<isc::dhcp::OptionDefinition>, boost::multi_index::indexed_by<boost::multi_index::sequenced<boost::multi_index::tag<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na> >, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, unsigned short, &(isc::dhcp::OptionDefinition::getCode() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, &(isc::dhcp::OptionDefinition::getName[abi:cxx11]() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::ordered_non_unique<boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, boost::posix_time::ptime, &(isc::data::BaseStampedElement::getModificationTime() const)>, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::tag<isc::dhcp::OptionIdIndexTag, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, unsigned long, &(isc::data::BaseStampedElement::getId() const)>, mpl_::na, mpl_::na>, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, std::allocator<boost::shared_ptr<isc::dhcp::OptionDefinition> > > > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, boost::shared_ptr<boost::multi_index::multi_index_container<boost::shared_ptr<isc::dhcp::OptionDefinition>, boost::multi_index::indexed_by<boost::multi_index::sequenced<boost::multi_index::tag<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na> >, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, unsigned short, &(isc::dhcp::OptionDefinition::getCode() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, &(isc::dhcp::OptionDefinition::getName[abi:cxx11]() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::ordered_non_unique<boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, boost::posix_time::ptime, &(isc::data::BaseStampedElement::getModificationTime() const)>, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::tag<isc::dhcp::OptionIdIndexTag, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, unsigned long, &(isc::data::BaseStampedElement::getId() const)>, mpl_::na, mpl_::na>, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, std::allocator<boost::shared_ptr<isc::dhcp::OptionDefinition> > > > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, boost::shared_ptr<boost::multi_index::multi_index_container<boost::shared_ptr<isc::dhcp::OptionDefinition>, boost::multi_index::indexed_by<boost::multi_index::sequenced<boost::multi_index::tag<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na> >, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, unsigned short, &(isc::dhcp::OptionDefinition::getCode() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::const_mem_fun<isc::dhcp::OptionDefinition, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, &(isc::dhcp::OptionDefinition::getName[abi:cxx11]() const)>, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::ordered_non_unique<boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, boost::posix_time::ptime, &(isc::data::BaseStampedElement::getModificationTime() const)>, mpl_::na, mpl_::na>, boost::multi_index::hashed_non_unique<boost::multi_index::tag<isc::dhcp::OptionIdIndexTag, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, boost::multi_index::const_mem_fun<isc::data::BaseStampedElement, unsigned long, &(isc::data::BaseStampedElement::getId() const)>, mpl_::na, mpl_::na>, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, std::allocator<boost::shared_ptr<isc::dhcp::OptionDefinition> > > > > >*)
+000000000007c740 W std::_Rb_tree<unsigned int, std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> >, std::_Select1st<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > >*)
+0000000000080fd8 W std::_Rb_tree_node<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > >* std::_Rb_tree<unsigned int, std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> >, std::_Select1st<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > > >::_M_copy<std::_Rb_tree<unsigned int, std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> >, std::_Select1st<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > > >::_Alloc_node>(std::_Rb_tree_node<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > > const*, std::_Rb_tree_node_base*, std::_Rb_tree<unsigned int, std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> >, std::_Select1st<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, boost::shared_ptr<isc::dhcp::Option> > > >::_Alloc_node&)
+000000000007a398 W std::pair<boost::shared_ptr<isc::dhcp::Pkt4>, boost::shared_ptr<isc::dhcp::Pkt4> >::~pair()
+000000000007a398 W std::pair<boost::shared_ptr<isc::dhcp::Pkt4>, boost::shared_ptr<isc::dhcp::Pkt4> >::~pair()
+000000000003329c W void boost::throw_exception<std::runtime_error>(std::runtime_error const&)
+
+=== RECOMMENDED MAPPINGS ===
+Use these in your kea_metrics.py:
+kea_functions = {
+    # packet_processing
+    "0x0000000000076590": ["trace_start", "trace_end"],
+    # packet_drop
+    "0x0000000000084ba8": ["trace_packet_drop"],
+    # cpu_usage
+    "0x0000000000076278": ["trace_cpu"],
+    # memory_usage
+    "0x0000000000051a78": ["trace_memory"],
+    # network_traffic
+    "0x0000000000076590": ["trace_network"],
+    # error_rates
+    "0x0000000000036bf8": ["trace_error"],
+    # lease_allocation
+    "0x0000000000076698": ["trace_lease_allocation", "trace_lease_allocation_end"],
+    # database_query
+    "0x0000000000036718": ["trace_database_query", "trace_database_query_end"],
+}

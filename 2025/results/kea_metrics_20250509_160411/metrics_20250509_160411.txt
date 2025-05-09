@@ -1,0 +1,53 @@
+BPF program loaded successfully
+✓ Attached trace_start to address 0x0000000000076590
+✓ Attached trace_packet_drop to address 0x0000000000084ba8
+✓ Attached trace_cpu_usage to address 0x0000000000076278
+✓ Attached trace_memory_usage to address 0x0000000000051a78
+✓ Attached trace_network_traffic to address 0x0000000000075e30
+✓ Attached trace_error_rates to address 0x0000000000051480
+✓ Attached trace_lease_allocation to address 0x0000000000076698
+✓ Attached trace_database_query to address 0x0000000000051600
+
+Successfully attached 8 probes.
+
+Tracing Kea DHCP server... Press Ctrl+C to exit
+(Note: You may need to generate DHCP traffic to see results)
+
+Exiting...
+
+Metrics Summary:
+
+Packet Processing Time:
+
+Packet Drop Rate:
+
+Cpu Usage:
+     cpu                 : count     distribution
+         0 -> 1          : 733      |****************************************|
+         2 -> 3          : 139      |*******                                 |
+         4 -> 7          : 177      |*********                               |
+         8 -> 15         : 72       |***                                     |
+        16 -> 31         : 0        |                                        |
+        32 -> 63         : 69       |***                                     |
+        64 -> 127        : 164      |********                                |
+       128 -> 255        : 108      |*****                                   |
+
+Memory Usage:
+     bytes               : count     distribution
+         0 -> 1          : 5252     |****************************************|
+
+Network Traffic:
+
+Error Rates:
+
+Lease Allocation Time:
+
+Database Query Performance:
+
+
+Aggregate Counts:
+Packet Drop Rate: 0
+Cpu Usage: 1616
+Memory Usage: 5252
+Network Traffic: 0
+Error Rates: 0
