@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>eBPF Metrics Dashboard</title>
+    <meta http-equiv="refresh" content="10">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        .dashboard { display: flex; flex-wrap: wrap; }
+        .chart { margin: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); background-color: white; padding: 15px; }
+        .chart img { width: 100%; height: auto; }
+        .loading-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e9e9e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+        .status-message {
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: #fffde7;
+            border-left: 4px solid #ffd600;
+        }
+    </style>
+</head>
+<body>
+    <h1>eBPF Metrics Real-time Dashboard</h1>
+    <div class="status-message">
+        <p>Auto-refreshes every 10 seconds. Last update: <span id="timestamp"></span></p>
+        <p id="data-status">Waiting for initial data collection...</p>
+    </div>
+
+    <div class="dashboard">
+        <div class="chart">
+            <h3>Summary</h3>
+            <div id="summary-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Aggregates</h3>
+            <div id="aggregates-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>CPU Usage</h3>
+            <div id="cpu-usage-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Memory Usage</h3>
+            <div id="memory-usage-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Network Traffic</h3>
+            <div id="network-traffic-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Error Rates</h3>
+            <div id="error-rates-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Packet Processing Time</h3>
+            <div id="packet-processing-time-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Packet Drop Rate</h3>
+            <div id="packet-drop-rate-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Lease Allocation Time</h3>
+            <div id="lease-allocation-time-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Database Query Performance</h3>
+            <div id="database-query-performance-container">
+                <div class="loading-placeholder">Waiting for data...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update timestamp
+        document.getElementById('timestamp').innerText = new Date().toLocaleString();
+        setInterval(function() {
+            document.getElementById('timestamp').innerText = new Date().toLocaleString();
+        }, 1000);
+
+        // Chart data
+        const charts = [
+            {id: 'summary-container', src: 'summary_latest.png', alt: 'Summary Metrics'},
+            {id: 'aggregates-container', src: 'aggregates_latest.png', alt: 'Aggregate Metrics'},
+            {id: 'cpu-usage-container', src: 'cpu_usage_latest.png', alt: 'CPU Usage'},
+            {id: 'memory-usage-container', src: 'memory_usage_latest.png', alt: 'Memory Usage'},
+            {id: 'network-traffic-container', src: 'network_traffic_latest.png', alt: 'Network Traffic'},
+            {id: 'error-rates-container', src: 'error_rates_latest.png', alt: 'Error Rates'},
+            {id: 'packet-processing-time-container', src: 'packet_processing_time_latest.png', alt: 'Packet Processing Time'},
+            {id: 'packet-drop-rate-container', src: 'packet_drop_rate_latest.png', alt: 'Packet Drop Rate'},
+            {id: 'lease-allocation-time-container', src: 'lease_allocation_time_latest.png', alt: 'Lease Allocation Time'},
+            {id: 'database-query-performance-container', src: 'database_query_performance_latest.png', alt: 'Database Query Performance'}
+        ];
+
+        // Check image availability and load them
+        function loadImages() {
+            let availableImages = 0;
+
+            charts.forEach(chart => {
+                const container = document.getElementById(chart.id);
+                const img = new Image();
+
+                img.onload = function() {
+                    container.innerHTML = '';
+                    container.appendChild(this);
+                    availableImages++;
+
+                    if (availableImages > 0) {
+                        document.getElementById('data-status').textContent =
+                            `Data collection active: ${availableImages} of ${charts.length} visualizations available`;
+                    }
+                };
+
+                img.onerror = function() {
+                    // Keep the placeholder if image fails to load
+                    if (container.querySelector('.loading-placeholder')) {
+                        // Already has placeholder, do nothing
+                    } else {
+                        container.innerHTML = '<div class="loading-placeholder">Waiting for data...</div>';
+                    }
+                };
+
+                // Add cache-busting parameter to force reload
+                const cacheBuster = new Date().getTime();
+                img.src = chart.src + '?t=' + cacheBuster;
+                img.alt = chart.alt;
+                img.style = 'width: 100%; height: auto;';
+            });
+        }
+
+        // Initial load
+        loadImages();
+
+        // Reload images every few seconds
+        setInterval(loadImages, 10000);
+    </script>
+</body>
+</html>

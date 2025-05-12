@@ -1,10 +1,17 @@
-# Kea DHCP Server Monitoring with eBPF
+# Kea DHCP Server Monitoring with eBPF and Netflix Hollow
 
-This project implements an eBPF-based monitoring solution for tracking performance metrics of the Kea DHCP server. It allows real-time observation of various performance indicators without modifying the Kea source code. The collected metrics can now be integrated with Netflix Hollow for efficient in-memory storage and access.
+This project implements an eBPF-based monitoring solution for tracking performance metrics of the Kea DHCP server with Netflix Hollow integration. It allows real-time observation of various performance indicators without modifying the Kea source code. The collected metrics are displayed in a real-time dashboard and can be stored in Netflix Hollow for efficient in-memory access.
 
 ## Overview
 
-The monitoring solution tracks the following metrics:
+The system provides end-to-end monitoring capabilities:
+
+1. **eBPF Metrics Collection**: Lightweight tracing of Kea DHCP server performance
+2. **Netflix Hollow Integration**: Efficient storage and access of metrics data
+3. **Real-time Dashboard**: Browser-based visualization of performance metrics
+4. **Resilient Architecture**: Fault-tolerant operation even when components fail
+
+### Key Metrics Tracked
 
 - **Packet Processing Time**: Time taken to process DHCP packets
 - **CPU Usage**: CPU utilization by the Kea server
@@ -16,32 +23,51 @@ The monitoring solution tracks the following metrics:
 
 ## Components
 
+### Core eBPF Monitoring
 1. **kea_metrics.c**: eBPF program defining trace functions for various metrics
 2. **kea_metrics.py**: Python script to load and attach eBPF probes to Kea functions
-3. **run_kea_monitoring.py**: Script to run both monitoring and traffic generation
-4. **visualize_metrics.py**: Script to generate visualizations from collected metrics
-5. **kea_monitor_complete.py**: All-in-one script for monitoring, traffic generation, and visualization
-6. **troubleshoot_kea_server.py**: Script to diagnose Kea server connectivity issues
-7. **dras_wrapper.py**: Script to run Infoblox's Dras client from macOS
-8. **Netflix Hollow Integration** (located in `hallow/` directory):
-   - `ebpf_to_json.py`: Convert eBPF metrics output to structured JSON
-   - `ebpf_to_hollow.py`: Convert JSON metrics to Hollow format and push to Hollow producer
-   - `ebpf_hollow_monitor.py`: Continuously monitor and push metrics to Hollow
-   - `visualize_json_metrics.py`: Create visualizations from JSON format metrics
-   - `test_hollow_integration.py`: Test the Hollow integration with sample data
-9. **Support Scripts**:
-   - `find_available_functions.py`: Tool to find relevant functions in Kea binary
-   - `find_mangled_names.py`: Tool to find mangled versions of function names
-   - `list_all_functions.py`: Comprehensive function discovery in Kea binary
+3. **visualize_metrics.py**: Script to generate visualizations from collected metrics
+4. **kea_monitor_complete.py**: All-in-one script for monitoring, traffic generation, and visualization
+
+### Netflix Hollow Integration
+5. **ebpf_to_json.py**: Convert eBPF metrics output to structured JSON
+6. **ebpf_to_hollow.py**: Convert JSON metrics to Hollow format and push to Hollow producer
+7. **ebpf_hollow_monitor.py**: Main script for metrics collection, visualization, and dashboard
+8. **visualize_json_metrics.py**: Create visualizations from JSON format metrics
+9. **run_realtime_dashboard.sh**: Launch the real-time dashboard with automatic Hollow detection
+
+### Diagnostic Tools
+10. **check_hollow_connectivity.py**: Test connectivity to Hollow server
+11. **dashboard_diagnostics.py**: Validate dashboard functionality
+12. **run_diagnostics.sh**: Run comprehensive system diagnostics
+13. **open_dashboard.sh**: Check and open the dashboard in a browser
+
+### Traffic Generation & Testing
+14. **run_kea_monitoring.py**: Script to run both monitoring and traffic generation
+15. **troubleshoot_kea_server.py**: Script to diagnose Kea server connectivity issues
+16. **dras_wrapper.py**: Script to run Infoblox's Dras client from macOS
+17. **test_hollow_integration.py**: Test the Hollow integration with sample data
+
+### Support Tools
+18. **find_available_functions.py**: Tool to find relevant functions in Kea binary
+19. **find_mangled_names.py**: Tool to find mangled versions of function names
+20. **list_all_functions.py**: Comprehensive function discovery in Kea binary
+21. **run_demo.sh**: Single command to run a complete demonstration
 
 ## Prerequisites
 
 - BCC (BPF Compiler Collection)
 - Python 3.6 or higher
+- Python packages:
+  - matplotlib
+  - pandas
+  - numpy
+  - requests
 - Kea DHCP server installed and running
 - Root/sudo privileges for attaching eBPF probes
-- Matplotlib for visualizations
-- Infoblox Dras client installed on macOS for DHCP traffic generation
+- Web browser for viewing the dashboard
+- Optional: Netflix Hollow server (falls back to local storage if unavailable)
+- Optional: Infoblox Dras client for DHCP traffic generation
 
 ## Cross-Platform Monitoring Architecture
 
@@ -93,7 +119,54 @@ scp user@linux-server:/path/to/dras_wrapper.py ~/dras_wrapper.py
 sudo python3 dras_wrapper.py --server <linux-server-ip>
 ```
 
-## Using with Infoblox Dras Client on macOS
+## Real-Time Monitoring with Netflix Hollow Integration
+
+### Running the Real-Time Dashboard
+
+The system provides a real-time dashboard for monitoring metrics:
+
+```bash
+# From the main directory
+./run_demo.sh
+```
+
+This will:
+1. Check if the Hollow server is running
+2. Automatically use local mode if Hollow is unavailable
+3. Start metrics collection via eBPF
+4. Launch the web-based dashboard
+5. Display real-time metrics visualizations
+
+### Dashboard Features
+
+- **Real-time Updates**: Metrics are continuously updated
+- **Multiple Metric Views**: See all collected metrics at once
+- **Auto-refresh**: Dashboard automatically refreshes with new data
+- **Resilient Operation**: Works even when components fail
+- **Hollow Integration**: Optional integration with Netflix Hollow for metrics storage
+
+### Netflix Hollow Data Schema
+
+The system uses a consistent data schema for Hollow integration:
+
+- **MetricsState**: Top-level container for all metrics data
+  - timestamp: When metrics were collected
+  - source: Source of the metrics data
+  - metrics: Map of named metrics with their data
+  - aggregates: Summary statistics
+
+- **Metric**: Container for a specific metric type
+  - name: Metric name (e.g., "CPU Usage")
+  - total: Total count of events
+  - unit: Unit of measurement (e.g., "ns", "bytes")
+  - buckets: Distribution buckets
+
+- **MetricBucket**: Distribution data for histogram visualization
+  - lower: Lower bound of the bucket
+  - upper: Upper bound of the bucket
+  - count: Number of events in this range
+
+## Using with Infoblox Dras Client (Optional)
 
 ### Running Dras Client on macOS
 
@@ -213,6 +286,9 @@ This project now supports integration with Netflix Hollow for efficient in-memor
 ```bash
 # Start continuous monitoring with 5-minute intervals
 sudo ./hallow/ebpf_hollow_monitor.py -p http://hollow-producer.example.com/api -d dhcp_metrics -t your_auth_token -i 300 -v
+
+# Disable fallback to sample metrics when collection fails (for production environments)
+sudo ./hallow/ebpf_hollow_monitor.py -p http://hollow-producer.example.com/api -d dhcp_metrics -t your_auth_token -i 300 -v --no-fallback
 ```
 
 ### Testing the Hollow Integration
@@ -229,6 +305,97 @@ sudo ./hallow/ebpf_hollow_monitor.py -p http://hollow-producer.example.com/api -
 ./hallow/visualize_json_metrics.py metrics.json -o visualizations/
 ```
 
+## Testing and Verification
+
+### Quick Testing
+
+To quickly test the entire system:
+
+```bash
+cd /home/parallels/Work/Tutorials/Hackathon/2025
+./run_demo.sh
+```
+
+### Component Testing
+
+For component-by-component testing:
+
+1. **Test Hollow Connectivity**:
+```bash
+cd hallow
+python3 check_hollow_connectivity.py
+```
+
+2. **Test Metrics Collection**:
+```bash
+cd hallow
+python3 ebpf_hollow_monitor.py --local --collection-interval 10 --no-dashboard -v
+```
+
+3. **Test Visualizations**:
+```bash
+cd hallow
+python3 visualize_json_metrics.py test_metrics.json --output-dir ./visualizations --create-latest -v
+```
+
+4. **Test Dashboard**:
+```bash
+cd hallow
+./open_dashboard.sh
+```
+
+### Comprehensive Diagnostic Tests
+
+Run all diagnostic tests:
+
+```bash
+cd hallow
+./run_diagnostics.sh
+```
+
+This will check:
+- System environment and dependencies
+- Hollow server connectivity
+- Metrics data format and validity
+- Visualization generation
+- Dashboard operation
+
+### Giving a Demo
+
+To give a complete demonstration of the system:
+
+1. Navigate to the project's root directory:
+```bash
+cd /home/parallels/Work/Tutorials/Hackathon/2025
+```
+
+2. Run the demo script:
+```bash
+# Run with default settings
+./run_demo.sh
+
+# Run without fallback to sample metrics
+./run_demo.sh --no-fallback
+```
+
+3. Point out key dashboard features:
+   - Real-time metrics updates
+   - Multiple visualization types
+   - Auto-refreshing data
+   - Resilience when components fail
+
+4. Explain the fallback mechanisms:
+   - Local mode when Hollow server is unavailable
+   - Sample metrics when collection fails (can be disabled with `--no-fallback`)
+   - Automatic dashboard recovery
+
 ## License
 
 This project is open source and available under [MIT License](LICENSE).
+
+## Acknowledgments
+
+- ISC for the Kea DHCP Server
+- BCC developers for the eBPF tools
+- Netflix for the Hollow in-memory data store
+- Infoblox for the Dras DHCP testing client

@@ -23,18 +23,18 @@ class JSONMetricsVisualizer:
         try:
             with open(filepath, 'r') as f:
                 data = json.load(f)
-            
+
             # Extract metrics data
             if 'metrics' in data:
                 self.metrics_data = data['metrics']
                 print(f"Loaded metrics data with {len(self.metrics_data)} categories")
-                
+
                 # Extract metadata if available
                 if 'metadata' in data:
                     self.metadata = data['metadata']
                     print(f"Source file: {self.metadata.get('source_file', 'unknown')}")
                     print(f"Timestamp: {self.metadata.get('timestamp', 'unknown')}")
-                
+
                 # Extract aggregates if available
                 if 'aggregates' in data:
                     self.aggregates = data['aggregates']
@@ -42,13 +42,13 @@ class JSONMetricsVisualizer:
             else:
                 print("No metrics data found in JSON file")
                 return False
-                
+
             return True
         except Exception as e:
             print(f"Failed to load JSON metrics: {e}")
             return False
 
-    def create_visualizations(self, output_dir='./visualizations'):
+    def create_visualizations(self, output_dir='./visualizations', create_latest=False):
         """Create visualizations for all metrics"""
         if not self.metrics_data:
             print("No metrics data to visualize")
@@ -69,55 +69,36 @@ class JSONMetricsVisualizer:
             # Clean title for filename
             clean_title = title.lower().replace(' ', '_')
 
-            # Create figure
-            plt.figure(figsize=(12, 7))
+            # Extract data
+            ranges = [f"{d.get('range', {}).get('lower', '')}-{d.get('range', {}).get('upper', '')}" for d in data]
+            values = [d.get('count', 0) for d in data]
 
-            # Prepare data for histogram
-            labels = []
-            values = []
-            
-            # Get the unit for this metric
-            unit = data[0].get('unit', 'count') if data else 'count'
+            # Get units if available
+            unit = data[0].get('unit', '') if data else ''
 
-            for item in data:
-                range_info = item.get('range', {})
-                lower = range_info.get('lower', 0)
-                upper = range_info.get('upper', 0)
-                count = item.get('count', 0)
-                
-                # Format the label based on the actual values
-                if upper == lower + 1:
-                    if lower > 20:  # Use scientific notation for very large values
-                        labels.append(f"2^{lower}")
-                    else:
-                        labels.append(f"{2 ** lower:,}")  # Add commas for readability
-                else:
-                    if lower > 20 or upper > 20:  # Use scientific notation for very large values
-                        labels.append(f"2^{lower}-2^{upper-1}")
-                    else:
-                        try:
-                            labels.append(f"{2 ** lower:,}-{2 ** (upper-1):,}")
-                        except (OverflowError, ValueError):
-                            labels.append(f"2^{lower}-2^{upper-1}")
-                
-                values.append(count)
+            # Only create visualization if we have data
+            if not any(values):
+                print(f"Skipping visualization for '{title}' - no non-zero values")
+                continue
 
-            # Plot histogram
-            bars = plt.bar(range(len(values)), values, tick_label=labels)
+            # Create the visualization
+            plt.figure(figsize=(10, 6))
+            bars = plt.bar(ranges, values)
+
+            # Format the chart
+            plt.title(f"{title} Distribution")
             plt.xticks(rotation=45, ha='right')
-            plt.title(f"eBPF Metrics - {title}")
+            plt.tight_layout()
+            plt.grid(axis='y', alpha=0.3)
 
-            # Add units to the y-axis
-            plt.ylabel('Frequency (count)')
-
-            # Add units to the x-axis based on metric type
+            # Set appropriate labels based on the metric type
             if 'time' in title.lower():
-                plt.xlabel(f'Time ({unit})')
+                plt.xlabel(f'Time Range ({unit})')
             elif 'cpu' in title.lower():
                 plt.xlabel(f'CPU Usage ({unit})')
             elif 'memory' in title.lower():
-                plt.xlabel(f'Memory Size ({unit})')
-            elif 'traffic' in title.lower() or 'packet' in title.lower():
+                plt.xlabel(f'Memory Usage ({unit})')
+            elif 'network' in title.lower():
                 plt.xlabel(f'Packet Count ({unit})')
             elif 'error' in title.lower():
                 plt.xlabel(f'Error Count ({unit})')
@@ -125,7 +106,7 @@ class JSONMetricsVisualizer:
                 plt.xlabel(f'Drop Count ({unit})')
             else:
                 plt.xlabel(f'Value Range ({unit})')
-                
+
             # Add data values on top of the bars
             for i, rect in enumerate(bars):
                 height = rect.get_height()
@@ -140,9 +121,16 @@ class JSONMetricsVisualizer:
 
             plt.tight_layout()
 
-            # Save figure
+            # Save figure with timestamp
             output_path = os.path.join(output_dir, f"{clean_title}_{self.timestamp}.png")
             plt.savefig(output_path)
+
+            # Save a latest version if requested
+            if create_latest:
+                latest_path = os.path.join(output_dir, f"{clean_title}_latest.png")
+                plt.savefig(latest_path)
+                print(f"Created latest version at {latest_path}")
+
             plt.close()
 
             viz_count += 1
@@ -150,12 +138,12 @@ class JSONMetricsVisualizer:
 
         # Create summary chart if we have multiple metrics
         if len(self.metrics_data) > 1:
-            self.create_summary_chart(output_dir)
+            self.create_summary_chart(output_dir, create_latest)
             viz_count += 1
 
         print(f"\nCreated {viz_count} visualizations in {output_dir}")
 
-    def create_summary_chart(self, output_dir):
+    def create_summary_chart(self, output_dir, create_latest=False):
         """Create a summary chart of all metrics"""
         plt.figure(figsize=(12, 8))
 
@@ -191,43 +179,57 @@ class JSONMetricsVisualizer:
 
             plt.tight_layout()
 
-            # Save figure
+            # Save figure with timestamp
             output_path = os.path.join(output_dir, f"summary_{self.timestamp}.png")
             plt.savefig(output_path)
+
+            # Save a latest version if requested
+            if create_latest:
+                latest_path = os.path.join(output_dir, f"summary_latest.png")
+                plt.savefig(latest_path)
+                print(f"Created latest version at {latest_path}")
+
             plt.close()
 
             print(f"Created summary visualization at {output_path}")
-            
-    def create_aggregate_chart(self, output_dir):
+
+    def create_aggregate_chart(self, output_dir, create_latest=False):
         """Create a chart of aggregate metrics"""
         if not hasattr(self, 'aggregates') or not self.aggregates:
             print("No aggregate data available")
             return
-            
+
         plt.figure(figsize=(10, 6))
-        
+
         # Extract data
         labels = list(self.aggregates.keys())
         values = list(self.aggregates.values())
-        
+
         # Plot bar chart
         plt.bar(labels, values)
         plt.xlabel('Metric')
         plt.ylabel('Count')
         plt.title('eBPF Aggregate Metrics')
         plt.xticks(rotation=45, ha='right')
-        
+
         # Add data labels above bars
         for i, v in enumerate(values):
             plt.text(i, v + 0.01 * max(values), str(v), ha='center')
-            
+
         plt.tight_layout()
-        
-        # Save figure
+
+        # Save figure with timestamp
         output_path = os.path.join(output_dir, f"aggregates_{self.timestamp}.png")
         plt.savefig(output_path)
+
+        # Save a latest version if requested
+        if create_latest:
+            latest_path = os.path.join(output_dir, f"aggregates_latest.png")
+            plt.savefig(latest_path)
+            print(f"Created latest version at {latest_path}")
+
         plt.close()
-        
+
         print(f"Created aggregate metrics visualization at {output_path}")
 
 def main():
@@ -236,6 +238,8 @@ def main():
     parser.add_argument('input_file', help='Path to the JSON metrics file')
     parser.add_argument('-o', '--output-dir', default='./visualizations',
                         help='Directory to save visualizations (default: ./visualizations)')
+    parser.add_argument('--create-latest', action='store_true',
+                        help='Create files with _latest suffix for real-time dashboard')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='Enable verbose output for debugging')
     args = parser.parse_args()
@@ -248,24 +252,29 @@ def main():
     if not os.path.isfile(args.input_file):
         print(f"Error: Input file '{args.input_file}' not found")
         return 1
-    
+
     try:
         # Create visualizer and process the data
         visualizer = JSONMetricsVisualizer()
-        
+
         if args.verbose:
             print("Loading JSON metrics data...")
-            
+
         if visualizer.load_json_metrics(args.input_file):
             if args.verbose:
                 print(f"JSON data loaded successfully. Metrics: {list(visualizer.metrics_data.keys())}")
-                
-            visualizer.create_visualizations(args.output_dir)
-            
+
+            # Pass the create_latest flag to the visualization function
+            generate_latest = args.create_latest
+            if generate_latest and args.verbose:
+                print("Creating visualizations with _latest suffix for real-time dashboard")
+
+            visualizer.create_visualizations(args.output_dir, generate_latest)
+
             if hasattr(visualizer, 'aggregates'):
                 if args.verbose:
                     print("Found aggregate data, creating aggregate chart...")
-                visualizer.create_aggregate_chart(args.output_dir)
+                visualizer.create_aggregate_chart(args.output_dir, generate_latest)
         else:
             print("Failed to process metrics data")
             return 1

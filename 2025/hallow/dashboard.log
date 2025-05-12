@@ -1,0 +1,316 @@
+Activating Python virtual environment...
+Environment activated successfully.
+Using Python 3.12.3
+Using pip 24.0 from /home/parallels/Work/Tutorials/Hackathon/2025/hallow/venv/lib/python3.12/site-packages/pip (python 3.12)
+
+IMPORTANT: This virtual environment will only be active in the current terminal.
+To use the environment in a new terminal, run this script again:
+  source /home/parallels/Work/Tutorials/Hackathon/2025/hallow/activate_env.sh
+
+To exit the virtual environment, run:
+  deactivate
+You can now use the Hollow integration scripts.
+Virtual environment activated.
+======================================================
+  Starting eBPF monitoring with real-time dashboard
+======================================================
+The dashboard will open in your web browser immediately.
+Placeholder images will be shown until real data is collected.
+Dashboard URL: http://localhost:8080/
+Press Ctrl+C to stop the monitoring.
+======================================================
+Hollow server is not running, using local mode instead
+2025-05-10 19:56:34,292 - eBPF-Hollow-Integration - INFO - Starting eBPF to Hollow integration
+2025-05-10 19:56:34,292 - eBPF-Hollow-Integration - INFO - Producer URL: None
+2025-05-10 19:56:34,292 - eBPF-Hollow-Integration - INFO - Dataset Name: realtime_ebpf_metrics
+2025-05-10 19:56:34,292 - eBPF-Hollow-Integration - INFO - Collection Interval: 30 seconds
+2025-05-10 19:56:34,292 - eBPF-Hollow-Integration - INFO - Pre-initializing dashboard with placeholders...
+2025-05-10 19:56:34,293 - eBPF-Hollow-Integration - INFO - Creating placeholder images in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/summary_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/aggregates_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/cpu_usage_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/memory_usage_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/network_traffic_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/error_rates_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/packet_processing_time_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/packet_drop_rate_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/lease_allocation_time_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - DEBUG - Placeholder already exists: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations/database_query_performance_latest.png
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - WARNING - Failed to create placeholder images, dashboard may show errors initially
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - INFO - Dashboard server started at http://localhost:8080/
+2025-05-10 19:56:34,300 - eBPF-Hollow-Integration - INFO - Opening dashboard in web browser...
+2025-05-10 19:56:34,435 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 1
+2025-05-10 19:56:34,440 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 19:57:04,444 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 19:57:04,444 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 19:57:04,444 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634.txt
+2025-05-10 19:57:04,444 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634.json
+2025-05-10 19:57:04,467 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 19:57:04,467 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634.json
+2025-05-10 19:57:04,467 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634.json
+2025-05-10 19:57:04,467 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 19:57:04,837 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_195634.txt
+Timestamp: 2025-05-10T19:57:04.463986
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 19:57:04,837 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 19:57:04,837 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 19:57:04,915 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 19:57:04,915 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_195634_92fenj58/metrics_20250510_195634_hollow.json
+
+2025-05-10 19:57:04,915 - eBPF-Hollow-Integration - INFO - Completed iteration 1. Waiting for next cycle.
+2025-05-10 19:57:29,950 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 2
+2025-05-10 19:57:29,951 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 19:57:59,953 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 19:57:59,953 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 19:57:59,953 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729.txt
+2025-05-10 19:57:59,953 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729.json
+2025-05-10 19:57:59,972 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 19:57:59,972 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729.json
+2025-05-10 19:57:59,972 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729.json
+2025-05-10 19:57:59,972 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 19:58:00,274 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_195729.txt
+Timestamp: 2025-05-10T19:57:59.969514
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 19:58:00,274 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 19:58:00,274 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 19:58:00,340 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 19:58:00,340 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_195729_guj6n9z7/metrics_20250510_195729_hollow.json
+
+2025-05-10 19:58:00,340 - eBPF-Hollow-Integration - INFO - Completed iteration 2. Waiting for next cycle.
+2025-05-10 19:58:25,369 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 3
+2025-05-10 19:58:25,370 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 19:58:55,372 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 19:58:55,372 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 19:58:55,373 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825.txt
+2025-05-10 19:58:55,373 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825.json
+2025-05-10 19:58:55,403 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 19:58:55,403 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825.json
+2025-05-10 19:58:55,403 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825.json
+2025-05-10 19:58:55,403 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 19:58:55,715 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_195825.txt
+Timestamp: 2025-05-10T19:58:55.399117
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 19:58:55,715 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 19:58:55,715 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 19:58:55,785 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 19:58:55,785 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_195825_5m4_8sqd/metrics_20250510_195825_hollow.json
+
+2025-05-10 19:58:55,785 - eBPF-Hollow-Integration - INFO - Completed iteration 3. Waiting for next cycle.
+2025-05-10 19:59:20,802 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 4
+2025-05-10 19:59:20,802 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 19:59:50,804 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 19:59:50,804 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 19:59:50,805 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920.txt
+2025-05-10 19:59:50,805 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920.json
+2025-05-10 19:59:50,831 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 19:59:50,831 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920.json
+2025-05-10 19:59:50,831 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920.json
+2025-05-10 19:59:50,831 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 19:59:51,195 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_195920.txt
+Timestamp: 2025-05-10T19:59:50.827531
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 19:59:51,195 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 19:59:51,195 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 19:59:51,265 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 19:59:51,265 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_195920_ysi1tfx7/metrics_20250510_195920_hollow.json
+
+2025-05-10 19:59:51,265 - eBPF-Hollow-Integration - INFO - Completed iteration 4. Waiting for next cycle.
+2025-05-10 20:00:16,289 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 5
+2025-05-10 20:00:16,290 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 20:00:46,291 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 20:00:46,291 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 20:00:46,292 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016.txt
+2025-05-10 20:00:46,292 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016.json
+2025-05-10 20:00:46,311 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 20:00:46,311 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016.json
+2025-05-10 20:00:46,311 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016.json
+2025-05-10 20:00:46,311 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 20:00:46,665 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_200016.txt
+Timestamp: 2025-05-10T20:00:46.308853
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 20:00:46,665 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 20:00:46,665 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 20:00:46,738 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 20:00:46,738 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_200016_qylkqoni/metrics_20250510_200016_hollow.json
+
+2025-05-10 20:00:46,738 - eBPF-Hollow-Integration - INFO - Completed iteration 5. Waiting for next cycle.
+2025-05-10 20:01:11,831 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 6
+2025-05-10 20:01:11,832 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 20:01:41,834 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 20:01:41,834 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 20:01:41,835 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111.txt
+2025-05-10 20:01:41,835 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111.json
+2025-05-10 20:01:41,855 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 20:01:41,855 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111.json
+2025-05-10 20:01:41,856 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111.json
+2025-05-10 20:01:41,856 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 20:01:42,219 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_200111.txt
+Timestamp: 2025-05-10T20:01:41.852500
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 20:01:42,219 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 20:01:42,219 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 20:01:42,294 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 20:01:42,294 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_200111_b_kafzuu/metrics_20250510_200111_hollow.json
+
+2025-05-10 20:01:42,294 - eBPF-Hollow-Integration - INFO - Completed iteration 6. Waiting for next cycle.
+2025-05-10 20:02:07,307 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 7
+2025-05-10 20:02:07,307 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 20:02:37,309 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 20:02:37,309 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 20:02:37,313 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207.txt
+2025-05-10 20:02:37,313 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207.json
+2025-05-10 20:02:37,335 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 20:02:37,335 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207.json
+2025-05-10 20:02:37,335 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207.json
+2025-05-10 20:02:37,335 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 20:02:37,691 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_200207.txt
+Timestamp: 2025-05-10T20:02:37.331612
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 20:02:37,691 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 20:02:37,691 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 20:02:37,770 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 20:02:37,770 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_200207_b8fwt2dp/metrics_20250510_200207_hollow.json
+
+2025-05-10 20:02:37,770 - eBPF-Hollow-Integration - INFO - Completed iteration 7. Waiting for next cycle.
+2025-05-10 20:03:02,782 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 8
+2025-05-10 20:03:02,782 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 20:03:32,784 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 20:03:32,784 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 20:03:32,784 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302.txt
+2025-05-10 20:03:32,784 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302.json
+2025-05-10 20:03:32,802 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 20:03:32,802 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302.json
+2025-05-10 20:03:32,802 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302.json
+2025-05-10 20:03:32,802 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 20:03:33,175 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_200302.txt
+Timestamp: 2025-05-10T20:03:32.799036
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 20:03:33,175 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 20:03:33,175 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 20:03:33,249 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 20:03:33,249 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_200302_ibqk4u5g/metrics_20250510_200302_hollow.json
+
+2025-05-10 20:03:33,249 - eBPF-Hollow-Integration - INFO - Completed iteration 8. Waiting for next cycle.
+2025-05-10 20:03:58,270 - eBPF-Hollow-Integration - INFO - Starting monitoring iteration 9
+2025-05-10 20:03:58,270 - eBPF-Hollow-Integration - INFO - Starting eBPF metrics collection for 30 seconds
+2025-05-10 20:04:01,163 - eBPF-Hollow-Integration - INFO - Received termination signal. Shutting down...
+2025-05-10 20:04:01,163 - eBPF-Hollow-Integration - INFO - Stopping dashboard server...
+2025-05-10 20:04:01,178 - eBPF-Hollow-Integration - INFO - Received termination signal. Shutting down...
+2025-05-10 20:04:01,178 - eBPF-Hollow-Integration - INFO - Stopping dashboard server...
+2025-05-10 20:04:28,271 - eBPF-Hollow-Integration - WARNING - Metrics collection issue: No metrics data collected (empty output)
+2025-05-10 20:04:28,271 - eBPF-Hollow-Integration - INFO - Using sample metrics data instead
+2025-05-10 20:04:28,272 - eBPF-Hollow-Integration - INFO - Copied sample JSON metrics to /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358.txt
+2025-05-10 20:04:28,272 - eBPF-Hollow-Integration - INFO - Converting metrics to JSON format: /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358.json
+2025-05-10 20:04:28,295 - eBPF-Hollow-Integration - INFO - JSON conversion completed successfully
+2025-05-10 20:04:28,295 - eBPF-Hollow-Integration - INFO - Creating visualizations from /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358.json
+2025-05-10 20:04:28,295 - eBPF-Hollow-Integration - WARNING - JSON file has no metrics data: /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358.json
+2025-05-10 20:04:28,295 - eBPF-Hollow-Integration - DEBUG - Running visualization script: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/visualize_json_metrics.py /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358.json --output-dir /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations --create-latest
+2025-05-10 20:04:28,671 - eBPF-Hollow-Integration - DEBUG - Visualization script output: Starting visualization process with input file: /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358.json
+Output directory: /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+Loading JSON metrics data...
+Loaded metrics data with 0 categories
+Source file: metrics_20250510_200358.txt
+Timestamp: 2025-05-10T20:04:28.291958
+JSON data loaded successfully. Metrics: []
+Creating visualizations with _latest suffix for real-time dashboard
+No metrics data to visualize
+
+2025-05-10 20:04:28,671 - eBPF-Hollow-Integration - INFO - Successfully created visualizations in /home/parallels/Work/Tutorials/Hackathon/2025/hallow/realtime_visualizations
+2025-05-10 20:04:28,671 - eBPF-Hollow-Integration - INFO - Using local Hollow setup for dataset: realtime_ebpf_metrics
+2025-05-10 20:04:28,748 - eBPF-Hollow-Integration - INFO - Successfully prepared metrics for local Hollow
+2025-05-10 20:04:28,748 - eBPF-Hollow-Integration - DEBUG - Successfully converted metrics to Hollow format
+Saved Hollow-formatted data to /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358_hollow.json
+Local Hollow producer detected at /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local
+To publish this data to the local Hollow store, run:
+  /home/parallels/Work/Tutorials/Hackathon/2025/hallow/hollow-local/run_producer.sh /tmp/ebpf_metrics_20250510_200358_m5mdsr80/metrics_20250510_200358_hollow.json
+
+2025-05-10 20:04:28,748 - eBPF-Hollow-Integration - INFO - Completed iteration 9. Waiting for next cycle.
+2025-05-10 20:04:28,748 - eBPF-Hollow-Integration - INFO - eBPF to Hollow integration complete
